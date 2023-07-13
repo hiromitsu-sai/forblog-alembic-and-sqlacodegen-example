@@ -1,1 +1,0 @@
-poetry add --dev black flake8 isort autoflake mypy autodoc 
