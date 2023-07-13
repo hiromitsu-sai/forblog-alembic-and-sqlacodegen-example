@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "inputs": [
+        {
+            "id": "inputString",
+            "type": "promptString",
+            "description": "リビジョンコメントを入力してください",
+        },
+    ],
+    "configurations": [
+        {
+            "name": "Alembic make rev",
+            "type": "python",
+            "request": "launch",
+            "module": "alembic",
+            "console": "integratedTerminal",
+            "args": [
+                "revision",
+                "--autogenerate",
+                "-m",
+                "${input:inputString}",
+            ],
+        },
+        {
+            "name": "Alembic migrate to latest",
+            "type": "python",
+            "request": "launch",
+            "module": "alembic",
+            "console": "integratedTerminal",
+            "args": [
+                "upgrade",
+                "head",
+            ],
+        },
+    ]
+}
